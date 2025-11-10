@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "UW-Registration",
+    "version": "1.0",
+    "description": "Automate the first steps of UW class registration.",
+    "permissions": ["tabs", "scripting"],
+    "host_permissions": [
+      "https://myplan.uw.edu/plan/*",
+      "https://register.uw.edu/register/*"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "UW Registration Helper"
+    }
+  }
