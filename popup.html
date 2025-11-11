@@ -4,9 +4,105 @@
   <head>
     <meta charset="utf-8">
     <title>UW Registration Helper</title>
+    <style>
+      body {
+        width: 350px;
+        padding: 15px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .input-group {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 8px;
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      #start, #add-classes-btn {
+        width: 100%;
+        background-color: #c5050c;
+        color: white;
+        margin-bottom: 8px;
+      }
+      #start:hover, #add-classes-btn:hover {
+        background-color: #a00008;
+      }
+      #add-classes-btn {
+        background-color: #0479a8;
+      }
+      #add-classes-btn:hover {
+        background-color: #036189;
+      }
+      #add-classes-btn:disabled, #start:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+      #add-class {
+        background-color: #e0e0e0;
+        color: #333;
+        padding: 6px 12px;
+      }
+      #add-class:hover {
+        background-color: #d0d0d0;
+      }
+      .remove-btn {
+        background-color: #f44336;
+        color: white;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .remove-btn:hover {
+        background-color: #d32f2f;
+      }
+      #class-list {
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    </style>
   </head>
   <body>
-    <button id="start">Start Registration</button>
+    <div class="section">
+      <h3>Add Classes to Search</h3>
+      <div class="input-group">
+        <input type="text" id="class-input" placeholder="e.g., CSE 373 A AA or CSE 373" />
+        <button id="add-class">Add</button>
+      </div>
+      <small style="color: #666; font-size: 11px; display: block; margin-top: 4px;">
+        Format: "COURSE LECTURE QUIZ" (e.g., CSE 373 A AA), "COURSE LECTURE" (e.g., CSE 373 A), or just "COURSE"
+      </small>
+      <div id="class-list"></div>
+    </div>
+
+    <div class="section">
+      <h3>Status</h3>
+      <div id="status-display" style="font-size: 12px; max-height: 120px; overflow-y: auto;"></div>
+    </div>
+
+    <div class="section">
+      <button id="add-classes-btn">Add Classes</button>
+      <button id="start">Start Registration</button>
+    </div>
+
     <script src="popup.js"></script>
   </body>
 </html>

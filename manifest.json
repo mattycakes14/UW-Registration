@@ -3,7 +3,7 @@
     "name": "UW-Registration",
     "version": "1.0",
     "description": "Automate the first steps of UW class registration.",
-    "permissions": ["tabs", "scripting"],
+    "permissions": ["tabs", "scripting", "storage"],
     "host_permissions": [
       "https://myplan.uw.edu/plan/*",
       "https://register.uw.edu/register/*"
