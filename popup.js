@@ -54,18 +54,10 @@ document.getElementById("add-classes-btn").addEventListener("click", () => {
   statusMessages = [];
   chrome.storage.local.set({ statusMessages: [] }, () => {
     chrome.runtime.sendMessage({ 
-      type: "addClasses",
+      type: "addClassesAndRegister",
       classes: classList
     });
   });
-});
-
-// Start registration button handler
-document.getElementById("start").addEventListener("click", () => {
-  chrome.runtime.sendMessage({ 
-    type: "kickoff"
-  });
-  window.close();
 });
 
 // Render the class list

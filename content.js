@@ -118,6 +118,9 @@ function searchAndClickCourses(classList) {
     if (currentIndex >= classList.length) {
       console.log("UW Registration Helper: finished searching all courses on MyPlan.");
       sendStatusUpdate({ course: "All courses", message: "Finished processing all classes", success: true });
+      
+      // Signal to background script that we're done adding classes
+      chrome.runtime.sendMessage({ type: "classesFinished" });
       return;
     }
     
